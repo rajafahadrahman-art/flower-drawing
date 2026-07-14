@@ -1,0 +1,432 @@
+/*
+ * Homepage section styles.
+ */
+
+.fd-section__intro {
+	max-width: var(--fd-reading);
+	margin-bottom: var(--fd-space-xl);
+}
+
+.fd-section__intro > :last-child,
+.fd-section__closing {
+	margin-bottom: 0;
+}
+
+.fd-section__closing {
+	max-width: var(--fd-reading);
+	margin-top: var(--fd-space-xl);
+	color: var(--color-muted);
+}
+
+.fd-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--fd-space-sm);
+	margin-top: var(--fd-space-md);
+}
+
+.fd-actions--center {
+	justify-content: center;
+}
+
+.fd-prose {
+	max-width: var(--fd-reading);
+}
+
+.fd-prose > :last-child {
+	margin-bottom: 0;
+}
+
+.fd-checklist {
+	display: grid;
+	gap: 0.75rem;
+	margin: var(--fd-space-md) 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+.fd-checklist li {
+	position: relative;
+	padding-left: 1.75rem;
+}
+
+.fd-checklist li::before {
+	position: absolute;
+	top: 0.45rem;
+	left: 0;
+	width: 0.7rem;
+	height: 0.7rem;
+	border-radius: 50%;
+	background: var(--color-sage);
+	content: "";
+}
+
+/* Hero */
+.fd-hero {
+	position: relative;
+	isolation: isolate;
+	padding-block: var(--fd-space-lg) var(--fd-space-xl);
+	overflow: clip;
+}
+
+.fd-hero::before {
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	background:
+		radial-gradient(circle at 88% 12%, rgba(246, 226, 222, 0.55), transparent 18rem),
+		radial-gradient(circle at 8% 20%, rgba(228, 238, 229, 0.7), transparent 24rem);
+	content: "";
+}
+
+.fd-hero__card {
+	width: 100%;
+	padding: clamp(0.5rem, 1.5vw, 1rem);
+	border: var(--fd-border);
+	border-radius: var(--fd-radius-xl);
+	background: var(--color-background);
+	box-shadow: var(--fd-shadow-md);
+}
+
+.fd-hero__media {
+	margin: 0;
+	overflow: hidden;
+	border-radius: calc(var(--fd-radius-xl) - 0.35rem);
+	background: var(--color-surface);
+}
+
+.fd-hero__image,
+.fd-hero__media img {
+	display: block;
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+}
+
+/* Introduction */
+.fd-intro__grid {
+	display: grid;
+	gap: var(--fd-space-lg);
+}
+
+.fd-intro__content {
+	padding: var(--fd-space-xl);
+}
+
+.fd-intro__content h1 {
+	max-width: 18ch;
+}
+
+/* Tutorial overview */
+.fd-tutorial-overview__grid {
+	display: grid;
+	gap: var(--fd-space-lg);
+	align-items: center;
+}
+
+.fd-tutorial-overview__media {
+	margin: 0;
+	padding: var(--fd-space-md);
+}
+
+.fd-tutorial-overview__image,
+.fd-tutorial-overview__media img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: var(--fd-radius-lg);
+}
+
+.fd-tutorial-overview__content {
+	padding: var(--fd-space-xl);
+}
+
+/* Steps */
+.fd-steps {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--fd-space-md);
+}
+
+.fd-step-card {
+	position: relative;
+	display: grid;
+	gap: var(--fd-space-sm);
+	min-height: 100%;
+	padding: var(--fd-space-lg);
+	transition:
+		border-color var(--fd-transition),
+		box-shadow var(--fd-transition),
+		transform var(--fd-transition);
+}
+
+.fd-step-card:hover {
+	border-color: color-mix(in srgb, var(--color-border) 66%, var(--color-sage));
+	box-shadow: var(--fd-shadow-md);
+	transform: translateY(-3px);
+}
+
+.fd-step-card__badge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.55rem;
+	height: 2.55rem;
+	border: 1px solid color-mix(in srgb, var(--color-sage) 42%, var(--color-border));
+	border-radius: 50%;
+	background: var(--color-sage-light);
+	color: var(--color-ink);
+	font-size: var(--fd-text-sm);
+	font-weight: 820;
+	line-height: 1;
+}
+
+.fd-step-card__title {
+	max-width: none;
+	margin-bottom: 0;
+}
+
+.fd-step-card p {
+	color: var(--color-muted);
+}
+
+/* Ideas bento */
+.fd-ideas {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--fd-space-md);
+}
+
+.fd-idea-card,
+.fd-skill-card,
+.fd-info-card {
+	position: relative;
+	display: grid;
+	align-content: start;
+	gap: var(--fd-space-sm);
+	min-height: 100%;
+	padding: var(--fd-space-lg);
+	overflow: hidden;
+	background: var(--color-surface);
+	transition:
+		background-color var(--fd-transition),
+		border-color var(--fd-transition),
+		box-shadow var(--fd-transition),
+		transform var(--fd-transition);
+}
+
+.fd-idea-card::after,
+.fd-skill-card::after {
+	position: absolute;
+	top: -3.5rem;
+	right: -3.5rem;
+	width: 7rem;
+	height: 7rem;
+	border-radius: 50%;
+	background: rgba(246, 226, 222, 0.55);
+	content: "";
+	pointer-events: none;
+}
+
+.fd-idea-card:nth-child(2n)::after,
+.fd-skill-card:nth-child(2n)::after {
+	background: rgba(228, 238, 229, 0.65);
+}
+
+.fd-idea-card:hover,
+.fd-skill-card:hover,
+.fd-info-card:hover {
+	background: var(--color-background);
+	box-shadow: var(--fd-shadow-md);
+	transform: translateY(-3px);
+}
+
+.fd-idea-card h3,
+.fd-skill-card h3,
+.fd-info-card h3,
+.fd-idea-card p,
+.fd-skill-card p,
+.fd-info-card p {
+	position: relative;
+	z-index: 1;
+}
+
+.fd-idea-card p,
+.fd-skill-card p,
+.fd-info-card p {
+	color: var(--color-muted);
+}
+
+.fd-skill-card,
+.fd-info-card {
+	background: var(--color-background);
+}
+
+/* Beginner */
+.fd-beginner-card {
+	padding: var(--fd-space-xl);
+}
+
+/* Pencil */
+.fd-pencil-section__grid {
+	display: grid;
+	gap: var(--fd-space-lg);
+	align-items: start;
+}
+
+.fd-pencil-tips-card {
+	padding: var(--fd-space-lg);
+	background: var(--color-surface);
+}
+
+.fd-pencil-tips-card ul {
+	margin: 0;
+}
+
+/* Worksheet */
+.fd-worksheet {
+	scroll-margin-top: calc(var(--fd-header-height) + 1rem);
+}
+
+.fd-worksheet__grid {
+	display: grid;
+	gap: var(--fd-space-xl);
+	align-items: start;
+}
+
+.fd-worksheet__preview {
+	margin: 0;
+	padding: var(--fd-space-md);
+	overflow: hidden;
+}
+
+.fd-worksheet__image,
+.fd-worksheet__preview img {
+	display: block;
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+}
+
+.fd-worksheet__content {
+	padding: var(--fd-space-xl);
+}
+
+/* Tips / collection / FAQ */
+.fd-tips-section .fd-card {
+	padding: var(--fd-space-xl);
+}
+
+.fd-faq {
+	scroll-margin-top: calc(var(--fd-header-height) + 1rem);
+}
+
+.fd-faq .fd-accordion {
+	max-width: 900px;
+}
+
+/* Final CTA */
+.fd-final-cta__card {
+	display: grid;
+	gap: var(--fd-space-md);
+	max-width: 920px;
+	margin-inline: auto;
+	padding: var(--fd-space-xl);
+	background: var(--color-ink);
+	color: var(--color-background);
+	text-align: center;
+	box-shadow: var(--fd-shadow-lg);
+}
+
+.fd-final-cta__card h2,
+.fd-final-cta__card p {
+	color: inherit;
+	margin-inline: auto;
+}
+
+.fd-final-cta__card p {
+	max-width: var(--fd-reading);
+	color: rgba(255, 255, 255, 0.78);
+}
+
+.fd-final-cta__card .fd-actions {
+	justify-content: center;
+}
+
+.fd-final-cta__card .fd-btn--ink {
+	background: var(--color-background);
+	color: var(--color-ink);
+}
+
+.fd-final-cta__card .fd-btn--sage {
+	border-color: transparent;
+}
+
+@media (min-width: 640px) {
+	.fd-steps,
+	.fd-ideas {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (min-width: 900px) {
+	.fd-hero {
+		padding-block: var(--fd-space-xl) var(--fd-space-2xl);
+	}
+
+	.fd-tutorial-overview__grid {
+		grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+	}
+
+	.fd-pencil-section__grid {
+		grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+	}
+
+	.fd-worksheet__grid {
+		grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.15fr);
+		align-items: center;
+	}
+
+	.fd-steps {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	.fd-ideas {
+		grid-template-columns: repeat(6, minmax(0, 1fr));
+	}
+
+	.fd-idea-card {
+		grid-column: span 2;
+	}
+
+	.fd-idea-card:nth-child(1),
+	.fd-idea-card:nth-child(4) {
+		grid-column: span 3;
+	}
+}
+
+@media (min-width: 1200px) {
+	.fd-steps {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+	}
+
+	.fd-step-card:last-child {
+		grid-column: span 1;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.fd-step-card,
+	.fd-idea-card,
+	.fd-skill-card,
+	.fd-info-card {
+		transition: none;
+	}
+
+	.fd-step-card:hover,
+	.fd-idea-card:hover,
+	.fd-skill-card:hover,
+	.fd-info-card:hover {
+		transform: none;
+	}
+}

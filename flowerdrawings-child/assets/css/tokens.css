@@ -1,0 +1,89 @@
+/*
+ * FlowerDrawings.com design tokens.
+ * Loaded first so theme, block, and component styles share one visual system.
+ */
+
+:root {
+	--color-ink: #111111;
+	--color-background: #ffffff;
+	--color-surface: #f6f6f3;
+	--color-surface-strong: #ecece7;
+	--color-border: #d8d8d2;
+	--color-muted: #64645f;
+	--color-sage-light: #e4eee5;
+	--color-sage: #819a89;
+	--color-blush-light: #f6e2de;
+	--color-blush: #d98278;
+
+	--fd-color-focus: #4f6f59;
+	--fd-color-overlay: rgba(17, 17, 17, 0.48);
+	--fd-color-header: rgba(255, 255, 255, 0.88);
+	--fd-color-card: rgba(255, 255, 255, 0.82);
+
+	--fd-font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+	--fd-font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+
+	--fd-text-xs: clamp(0.78rem, 0.74rem + 0.18vw, 0.88rem);
+	--fd-text-sm: clamp(0.88rem, 0.84rem + 0.2vw, 1rem);
+	--fd-text-base: clamp(1rem, 0.96rem + 0.2vw, 1.1rem);
+	--fd-text-md: clamp(1.08rem, 1rem + 0.38vw, 1.28rem);
+	--fd-text-lg: clamp(1.22rem, 1.06rem + 0.78vw, 1.66rem);
+	--fd-text-xl: clamp(1.55rem, 1.24rem + 1.5vw, 2.42rem);
+	--fd-text-2xl: clamp(2.05rem, 1.48rem + 2.8vw, 3.75rem);
+
+	--fd-leading-tight: 1.08;
+	--fd-leading-heading: 1.16;
+	--fd-leading-body: 1.68;
+
+	--fd-space-2xs: clamp(0.25rem, 0.22rem + 0.14vw, 0.32rem);
+	--fd-space-xs: clamp(0.5rem, 0.45rem + 0.24vw, 0.65rem);
+	--fd-space-sm: clamp(0.75rem, 0.68rem + 0.34vw, 0.95rem);
+	--fd-space-md: clamp(1rem, 0.86rem + 0.68vw, 1.38rem);
+	--fd-space-lg: clamp(1.5rem, 1.22rem + 1.35vw, 2.25rem);
+	--fd-space-xl: clamp(2rem, 1.5rem + 2.42vw, 3.35rem);
+	--fd-space-2xl: clamp(3rem, 2.05rem + 4.62vw, 5.65rem);
+	--fd-space-3xl: clamp(4rem, 2.58rem + 6.9vw, 7.8rem);
+
+	--fd-container: min(100% - clamp(2rem, 5vw, 4rem), 1240px);
+	--fd-container-wide: min(100% - clamp(2rem, 5vw, 4rem), 1280px);
+	--fd-reading: min(100%, 744px);
+	--fd-header-height: 72px;
+	--fd-admin-bar: 0px;
+
+	--fd-radius-sm: 0.7rem;
+	--fd-radius-md: 1rem;
+	--fd-radius-lg: 1.35rem;
+	--fd-radius-xl: 1.75rem;
+	--fd-radius-pill: 999px;
+
+	--fd-border: 1px solid var(--color-border);
+	--fd-shadow-sm: 0 1px 2px rgba(17, 17, 17, 0.04), 0 8px 24px rgba(17, 17, 17, 0.04);
+	--fd-shadow-md: 0 12px 38px rgba(17, 17, 17, 0.08);
+	--fd-shadow-lg: 0 18px 60px rgba(17, 17, 17, 0.1);
+
+	--fd-transition-fast: 160ms ease;
+	--fd-transition: 220ms ease;
+	--fd-transition-slow: 280ms ease;
+
+	--fd-z-header: 100;
+	--fd-z-menu: 90;
+	--fd-z-skip: 110;
+}
+
+.admin-bar {
+	--fd-admin-bar: 32px;
+}
+
+@media (max-width: 782px) {
+	.admin-bar {
+		--fd-admin-bar: 46px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	:root {
+		--fd-transition-fast: 1ms linear;
+		--fd-transition: 1ms linear;
+		--fd-transition-slow: 1ms linear;
+	}
+}
