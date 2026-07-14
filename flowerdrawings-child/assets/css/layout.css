@@ -115,6 +115,8 @@
 	align-items: center;
 }
 
+.fd-grid--2,
+.fd-grid--3,
 .fd-grid--two,
 .fd-grid--three,
 .fd-grid--four {
@@ -166,6 +168,8 @@
 }
 
 @media (min-width: 640px) {
+	.fd-grid--2,
+	.fd-grid--3,
 	.fd-grid--two,
 	.fd-grid--three,
 	.fd-grid--four {
@@ -194,10 +198,12 @@
 		gap: var(--fd-space-lg);
 	}
 
+	.fd-grid--2,
 	.fd-grid--two {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 
+	.fd-grid--3,
 	.fd-grid--three {
 		grid-template-columns: repeat(3, minmax(0, 1fr));
 	}

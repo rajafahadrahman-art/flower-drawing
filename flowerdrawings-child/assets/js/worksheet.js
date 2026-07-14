@@ -31,7 +31,11 @@
 			var href = link.getAttribute("href") || "";
 			var label = getLabel(link);
 			var action = (link.getAttribute("data-worksheet-action") || link.getAttribute("data-fd-worksheet-action") || "").toLowerCase();
-			var shouldPrint = action === "print" || link.hasAttribute("data-fd-worksheet-print") || label.indexOf("print") !== -1;
+			var shouldPrint =
+				action === "print" ||
+				link.hasAttribute("data-fd-worksheet-print") ||
+				link.hasAttribute("data-fd-print-worksheet") ||
+				label.indexOf("print") !== -1;
 			var shouldDownload =
 				action === "download" ||
 				link.hasAttribute("data-fd-worksheet-download") ||
